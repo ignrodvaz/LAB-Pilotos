@@ -29,7 +29,7 @@ from datetime import date
 #     print(f"5. Los {n} pilotos con menor tiempo son {res5}")
 
 if __name__ == "__main__":
-    datos = lee_carreras("./LAB-Pilotos/data/f1.csv")
+    datos = lee_carreras("./data/f1.csv")
     # print(f"Leídos {len(datos)} datos.")
     # print("Mostrando los 2 primeros:")
     # for dato in datos[:2]:
@@ -44,5 +44,5 @@ if __name__ == "__main__":
     # for res in e: 
     #     print(f"Este es la funcion del ratio {res} \n")
     
-    print(puntos_piloto_anyos(datos))
-    print(mejor_escuderia_anyo(datos, 2022))
+    # print(puntos_piloto_anyos(datos))
+    mejor_escuderia_anyo(datos, 2022)

@@ -127,9 +127,10 @@ def total_puntos_por_piloto(carrera: Carrera) -> int:
 def mejor_escuderia_anyo(carreras:list[Carrera], anyo:int)->str:
     victorias_por_escuderia = defaultdict(int)
     for carrera in carreras:
-        victorias_por_escuderia[carrera.fecha] += victorias(carrera)
-        
-    return victorias_por_escuderia
+        if carrera.fecha_carrera.year == anyo:
+            victorias_por_escuderia[carrera.escuderia] += victorias(carrera)
+    res = max(victorias_por_escuderia.items(), key=lambda t:t[1])[0]
+    return print(f"La mejor escuderia en el año {anyo} ha sido {res}")
         
 def victorias(carrera: Carrera):
     victoria = 0
